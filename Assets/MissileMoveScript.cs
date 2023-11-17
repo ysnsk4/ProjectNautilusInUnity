@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class MissileMoveScript : MonoBehaviour
 {
-    public GameObject Missile1; //オリジナルのオブジェクト
-    int missileFlag = 1;
+    public GameObject Rock; //岩のオブジェクト
+    public GameObject Missile; //オリジナルのオブジェクト
+    int missileFlag = 0;
     int missileAdvance = 0;
     int missileDistance = 0;
-    int missileCount = 0;
+    //int missileCount = 0;
+
+    //// インスタンス化するPrefabオブジェクトをアサインします。
+    //public GameObject prefab;
+
+    //// 親オブジェクトのトランスフォームをアサインします。
+    //public Transform parentTran;
+
+    //// ゲームオブジェクトを生成する数を指定します。
+    //public int prefabNum;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         //Instantiate(Missile1, new Vector3(-1.0f, 0.0f, 0.0f), Quaternion.identity);
     }
 
@@ -23,64 +34,62 @@ public class MissileMoveScript : MonoBehaviour
     {
         Vector3 pos = transform.position;
 
-        //if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        //{
-        //    pos.x += 0.05f;
-        //}
-        //if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        //{
-        //    pos.x -= 0.05f;
-        //}
-        //if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-        //{
-        //    pos.z += 0.05f;
-        //}
-        //if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        //{
-        //    pos.z -= 0.05f;
-        //}
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    pos.y += 0.01f;
-        //}
-        //if (Input.GetKey(KeyCode.LeftShift))
-        //{
-        //    pos.y -= 0.01f;
-        //}
-
+        
         if (missileFlag == 0)
         {
-            if (missileCount < 2)
+            if (Input.GetKeyDown(KeyCode.Z))
             {
-                //Instantiate(Missile1, new Vector3(-1.0f, 0.0f, 0.0f), Quaternion.identity);
-                //GameObject Cube= Instantiate(CubePrefab, Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f), Quaternion.identity);
-                missileCount += 1;
+                //InstantiatePrefab();
+                Instantiate(Missile, new Vector3(0.0f, -1.0f, -1.0f), Quaternion.AngleAxis(270,Vector3.up));
+                missileFlag = 1;
+                missileAdvance = 1;
             }
-            missileFlag = 1;
         }
 
         if (missileFlag == 1)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                missileAdvance = 1;
-            }
             if (missileAdvance == 1)
             {
-                pos.z += 0.01f;
+                pos.z = pos.z + 0.1f;
+                //pos.x = pos.x;
                 missileDistance += 1;
             }
-            if (missileDistance >= 1000)
+            if (missileDistance >= 500)
             {
                 missileFlag = 0;
                 missileAdvance = 0;
                 missileDistance = 0;
-                missileCount = 0;
-                Destroy(this.gameObject);
+                //missileCount = 0;
+                Destroy(Missile);
             }
         }
        
         transform.position = new Vector3(pos.x, pos.y, pos.z);
         transform.position.Normalize();
     }
+
+    void OnCollisionEnter()
+    {
+        Debug.Log("Hit"); // ログを表示する
+        missileFlag = 0;
+        missileAdvance = 0;
+        missileDistance = 0;
+        //missileCount = 0;
+        Destroy(Missile);
+    }
+
+
+    /// <Summary>
+    /// ゲームオブジェクトをPrefabから作成する処理です。
+    /// </Summary>
+    //void InstantiatePrefab()
+    //{
+    //    for (int i = 0; i < prefabNum; i++)
+    //    {
+    //        GameObject obj = Instantiate(prefab, new Vector3(0.0f, -1.0f, -1.0f), Quaternion.AngleAxis(270, Vector3.up));
+    //        //GameObject obj = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+    //        obj.transform.SetParent(parentTran);
+    //        obj.transform.position = new Vector3(i, 0f, 0f);
+    //    }
+    //}
 }

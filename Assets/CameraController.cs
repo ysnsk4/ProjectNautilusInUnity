@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
         float my = Input.GetAxis("Mouse Y");
         
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0))
         {
             if (Mathf.Abs(mx) > 0.1f)
             {
