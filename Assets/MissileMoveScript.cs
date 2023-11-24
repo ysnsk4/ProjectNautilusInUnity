@@ -83,4 +83,12 @@ public class MissileMoveScript : MonoBehaviour
         transform.position = new Vector3(pos.x, pos.y, pos.z);
         transform.position.Normalize();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag== "breakable_rock")
+        {
+            other.GetComponent<BreakRock>().Damage();
+        }
+    }
 }

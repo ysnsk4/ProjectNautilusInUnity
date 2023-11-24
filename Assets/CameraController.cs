@@ -24,14 +24,14 @@ public class CameraController : MonoBehaviour
         float my = Input.GetAxis("Mouse Y");
         
 
-        if (Input.GetMouseButton(1))
-        {
+        //if (Input.GetMouseButton(1))
+        //{
             if (Mathf.Abs(mx) > 0.1f)
             {
                 // ‰ñ“]²‚Íƒ[ƒ‹ƒhÀ•W‚ÌY²
                 transform.RotateAround(Player.transform.position, Vector3.up, mx*2);
             }
-        }
+        //}
 
         //if (Input.GetKey(KeyCode.I))
         //{
@@ -56,15 +56,15 @@ public class CameraController : MonoBehaviour
         //    }
         //}
 
-        if (Input.GetMouseButton(0))
-        {
+        //if (Input.GetMouseButton(0))
+        //{
             // Y•ûŒü‚Éˆê’è—ÊˆÚ“®‚µ‚Ä‚¢‚ê‚Îc‰ñ“]
             if (Mathf.Abs(my) > 0.1f)
             {
                     // ‰ñ“]²‚ÍƒJƒƒ‰©g‚ÌX²
                 transform.RotateAround(Player.transform.position, transform.right, -my*2);
             }
-        }
+        //}
 
         //angle.y += Input.GetAxis("Mouse X");
 
