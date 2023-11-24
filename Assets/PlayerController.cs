@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     //Rigidbody rb;
     // Start is called before the first frame update
+
+    public MissileMoveScript Missile; //オリジナルのオブジェクト
+    private MissileMoveScript currentMisile;
+
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
@@ -52,12 +56,28 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            pos.y += 0.01f;
+            pos.y += 0.03f;
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            pos.y -= 0.01f;
+            pos.y -= 0.03f;
         }
+
+        if (!currentMisile)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                //InstantiatePrefab();
+                currentMisile = Instantiate(Missile, new Vector3(0.0f, -1.0f, -1.0f), Quaternion.AngleAxis(270, Vector3.up));
+            }
+        }
+
+        if( currentMisile && currentMisile.missileAdvance == 0)
+        {
+            Destroy(currentMisile.gameObject);
+            currentMisile = null;
+        }
+        Debug.Log(currentMisile);
 
         transform.position = new Vector3(pos.x, pos.y, pos.z);
         transform.position.Normalize();
