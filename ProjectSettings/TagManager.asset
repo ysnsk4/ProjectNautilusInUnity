@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - breakable_rock
+  - bullet
   layers:
   - Default
   - TransparentFX
