@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
             Destroy(currentMisile.gameObject);
             currentMisile = null;
         }
-        Debug.Log(currentMisile);
+        //Debug.Log(currentMisile);
 
         transform.position = new Vector3(pos.x, pos.y, pos.z);
         transform.position.Normalize();

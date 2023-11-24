@@ -62,9 +62,10 @@ public class MissileMoveScript : MonoBehaviour
         //transform.position.Normalize();
     }
 
-    void OnCollisionEnter()
+    void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Hit"); // ƒƒO‚ğ•\¦‚·‚é
+        Debug.Log(collision.gameObject.name); // ‚Ô‚Â‚©‚Á‚½‘Šè‚Ì–¼‘O‚ğæ“¾
         missileAdvance = 0;
         missileDistance = 0;
         //missileCount = 0;
