@@ -46,11 +46,11 @@ public class MissileMoveScript : MonoBehaviour
 
         if (missileAdvance == 1)
         {
-            pos.z += 1.00f;
+            pos.z += 0.20f;
             //pos.x = pos.x;
             missileDistance += 1;
         }
-        if (missileDistance >= 100)
+        if (missileDistance >= 500)
         {
             missileAdvance = 0;
             missileDistance = 0;
@@ -66,10 +66,23 @@ public class MissileMoveScript : MonoBehaviour
     {
         Debug.Log("Hit"); // ƒƒO‚ğ•\¦‚·‚é
         Debug.Log(collision.gameObject.name); // ‚Ô‚Â‚©‚Á‚½‘Šè‚Ì–¼‘O‚ğæ“¾
+
+        //if()
+
         missileAdvance = 0;
         missileDistance = 0;
         //missileCount = 0;
         //Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "breakable_rock")
+        {
+            other.GetComponent<BreakRock>().Damage();
+            missileAdvance = 0;
+            missileDistance = 0;
+        }
     }
 
 

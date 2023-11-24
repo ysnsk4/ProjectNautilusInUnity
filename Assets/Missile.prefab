@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 1737755320551423847}
   - component: {fileID: 2572678293608696206}
   - component: {fileID: 8571996077574076602}
-  - component: {fileID: 2251131601073856979}
   - component: {fileID: 4615541178986916383}
   m_Layer: 0
   m_Name: Missile
-  m_TagString: Untagged
+  m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,33 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rock: {fileID: 919132149155446097, guid: 01185e9b47cf3da40b8b7b9e58c380d9, type: 3}
   missileAdvance: 1
---- !u!54 &2251131601073856979
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9032369708136999276}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!65 &4615541178986916383
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -142,8 +114,8 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.20333336, y: 0.40000004, z: 0.022222234}
