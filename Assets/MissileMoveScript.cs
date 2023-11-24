@@ -7,7 +7,7 @@ public class MissileMoveScript : MonoBehaviour
     public GameObject Rock; //岩のオブジェクト
     public int missileAdvance = 1;
     int missileDistance = 0;
-    int missileCount = 0;
+    //int missileCount = 0;
 
     //// インスタンス化するPrefabオブジェクトをアサインします。
     //public GameObject prefab;
@@ -46,11 +46,11 @@ public class MissileMoveScript : MonoBehaviour
 
         if (missileAdvance == 1)
         {
-            pos.z += 5.00f;
+            pos.z += 1.00f;
             //pos.x = pos.x;
-            missileDistance += 5;
+            missileDistance += 1;
         }
-        if (missileDistance >= 500)
+        if (missileDistance >= 100)
         {
             missileAdvance = 0;
             missileDistance = 0;

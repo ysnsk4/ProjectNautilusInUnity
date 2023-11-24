@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Z))
             {
                 //InstantiatePrefab();
-                currentMisile = Instantiate(Missile, new Vector3(0.0f, -1.0f, -1.0f), Quaternion.AngleAxis(270, Vector3.up));
+                currentMisile = Instantiate(Missile, new Vector3(pos.x, pos.y - 1.0f, pos.z - 1.0f), Quaternion.AngleAxis(270, Vector3.up));
             }
         }
 
