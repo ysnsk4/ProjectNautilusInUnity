@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MissileMoveScript : MonoBehaviour
 {
-    public GameObject Rock; //岩のオブジェクト
     public int missileAdvance = 1;
     int missileDistance = 0;
     //int missileCount = 0;
@@ -64,10 +63,8 @@ public class MissileMoveScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hit"); // ログを表示する
-        Debug.Log(collision.gameObject.name); // ぶつかった相手の名前を取得
-
-        //if()
+        //Debug.Log("Hit"); // ログを表示する
+        //Debug.Log(collision.gameObject.name); // ぶつかった相手の名前を取得
 
         missileAdvance = 0;
         missileDistance = 0;
