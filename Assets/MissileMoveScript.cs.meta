@@ -3,11 +3,7 @@ guid: fd94b9c290dfc484b9729d83d0f79436
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - Rock: {fileID: 919132149155446097, guid: 01185e9b47cf3da40b8b7b9e58c380d9, type: 3}
-  - Missile: {fileID: 919132149155446097, guid: 65a08671ab6ed5843a9f5d7818a3728c, type: 3}
-  - prefab: {fileID: 919132149155446097, guid: 65a08671ab6ed5843a9f5d7818a3728c, type: 3}
-  - parentTran: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
