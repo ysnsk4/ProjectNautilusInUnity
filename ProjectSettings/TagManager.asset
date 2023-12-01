@@ -6,6 +6,7 @@ TagManager:
   tags:
   - breakable_rock
   - Missile
+  - bullet
   layers:
   - Default
   - TransparentFX
