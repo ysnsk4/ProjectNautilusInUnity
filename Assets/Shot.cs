@@ -21,12 +21,4 @@ public class Shot : MonoBehaviour
             Instantiate(Bullet,transform.position, Quaternion.identity);
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "breakable_rock")
-        {
-            other.GetComponent<BreakRock>().Damage();
-        }
-    }
 }
