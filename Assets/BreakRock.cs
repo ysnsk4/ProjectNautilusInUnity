@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BreakRock : MonoBehaviour
 {
-   
     public void Damage()
     {
         Destroy(gameObject);
