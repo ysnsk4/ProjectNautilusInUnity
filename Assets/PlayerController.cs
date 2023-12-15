@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        GoldCount = 0;
+        ClearFlag = 0;
     }
 
     // Update is called once per frame
@@ -48,10 +50,9 @@ public class PlayerController : MonoBehaviour
         {
             // SampleSceneÇ…êÿÇËë÷Ç¶ÇÈ
             SceneManager.LoadScene("ClearScene");
+            Start();
         }
 
-
-            
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
