@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // UnityEngine.SceneManagemntの機能を使用
 
 public class PlayerController : MonoBehaviour
 {
     public MissileMoveScript Missile; //オリジナルのオブジェクト
     private MissileMoveScript currentMisile;
+
+    int GoldCount = 0;
+    int ClearFlag = 0;
 
     //[SerializeField]
     //private float _speed = 1f;
@@ -15,9 +19,38 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    /// <summary>
+    /// 衝突した時
+    /// </summary>
+    /// <param name="collision"></param>
+    void OnCollisionEnter(Collision collision)
     {
+        // 衝突した相手にPlayerタグが付いているとき
+        if (collision.gameObject.tag == "GetGold")
+        {
+            GoldCount += 1;
+        }
+    }
+
+        void Update()
+    {
+
         Vector3 pos = transform.position;
+
+        if (GoldCount >= 3)
+        {
+            ClearFlag = 1;
+        }
+
+        if (ClearFlag == 1 && pos.z > 200)
+        {
+            // SampleSceneに切り替える
+            SceneManager.LoadScene("ClearScene");
+        }
+
+
+            
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
@@ -72,7 +105,9 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(pos.x, pos.y, pos.z);
         transform.position.Normalize();
 
-        // 速度に正規化したベクトルを代入
-        //rb.velocity = transform.position.normalized;
+       // 速度に正規化したベクトルを代入
+       //rb.velocity = transform.position.normalized;
     }
+
+    
 }
