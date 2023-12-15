@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement; // UnityEngine.SceneManagemntの機能を使用
 
 public class PlayerController : MonoBehaviour
 {
+
     public MissileMoveScript Missile; //オリジナルのオブジェクト
     private MissileMoveScript currentMisile;
 
-    int GoldCount = 0;
+    public static int GoldCount = 0;
     int ClearFlag = 0;
 
     //[SerializeField]
@@ -104,6 +105,9 @@ public class PlayerController : MonoBehaviour
 
         transform.position = new Vector3(pos.x, pos.y, pos.z);
         transform.position.Normalize();
+
+
+
 
        // 速度に正規化したベクトルを代入
        //rb.velocity = transform.position.normalized;
