@@ -1,0 +1,20 @@
+diff a/Assets/CameraController.cs b/Assets/CameraController.cs	(rejected hunks)
+@@ -28,11 +28,17 @@
+         {
+             if (Mathf.Abs(mx) > 0.1f)
+             {
++<<<<<<< HEAD
+                 // ��]���̓��[���h���W��Y��
+                 transform.RotateAround(Player.transform.position, Vector3.up, mx * 2);
++=======
++                // 回転軸はワールド座標のY軸
++                transform.RotateAround(Player.transform.position, Vector3.up, mx*2);
++>>>>>>> c27ec95b9f4b753fc7d2c5f8816fa1afa0a98618
+             }
+-        }
++        //}
+ 
++<<<<<<< HEAD
+         if (Input.GetMouseButton(0))
+         {
+             // Y�����Ɉ��ʈړ����Ă���Ώc��]

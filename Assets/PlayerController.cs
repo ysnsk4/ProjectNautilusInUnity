@@ -50,9 +50,10 @@ public class PlayerController : MonoBehaviour
         {
             // SampleScene‚ÉØ‚è‘Ö‚¦‚é
             SceneManager.LoadScene("ClearScene");
-            Start();
         }
 
+
+            
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {

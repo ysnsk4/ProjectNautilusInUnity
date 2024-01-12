@@ -28,11 +28,17 @@ public class CameraController : MonoBehaviour
         {
             if (Mathf.Abs(mx) > 0.1f)
             {
+<<<<<<< HEAD
                 // ‰ñ“]Ž²‚Íƒ[ƒ‹ƒhÀ•W‚ÌYŽ²
                 transform.RotateAround(Player.transform.position, Vector3.up, mx * 2);
+=======
+                // å›žè»¢è»¸ã¯ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ãEYè»¸
+                transform.RotateAround(Player.transform.position, Vector3.up, mx*2);
+>>>>>>> c27ec95b9f4b753fc7d2c5f8816fa1afa0a98618
             }
-        }
+        //}
 
+<<<<<<< HEAD
         if (Input.GetMouseButton(0))
         {
             // Y•ûŒü‚Éˆê’è—ÊˆÚ“®‚µ‚Ä‚¢‚ê‚Îc‰ñ“]
@@ -40,8 +46,40 @@ public class CameraController : MonoBehaviour
             {
                 // ‰ñ“]Ž²‚ÍƒJƒƒ‰Ž©g‚ÌXŽ²
                 transform.RotateAround(Player.transform.position, transform.right, -my * 2);
+=======
+        //if (Input.GetKey(KeyCode.I))
+        //{
+        //    my = 1.0f;
+        //}
+        //if (Input.GetKey(KeyCode.K))
+        //{
+        //    my = -1.0f;
+        //}
+        //if(my>0)
+        //{
+        //    if (transform.rotation.z + my > 90)
+        //    {
+        //        my = 90 - transform.rotation.z;
+        //    }
+        //}
+        //if (my < 0)
+        //{
+        //    if (transform.rotation.z + my < -90)
+        //    {
+        //        my = -90 - transform.rotation.z;
+        //    }
+        //}
+
+        //if (Input.GetMouseButton(0))
+        //{
+            // Yæ–¹å‘ã«ä¸€å®šé‡ç§»å‹•ã—ã¦ãE‚Œã°ç¸¦å›žè»¢
+            if (Mathf.Abs(my) > 0.1f)
+            {
+                    // å›žè»¢è»¸ã¯ã‚«ãƒ¡ãƒ©è‡ªèº«ã®Xè»¸
+                transform.RotateAround(Player.transform.position, transform.right, -my*2);
+>>>>>>> c27ec95b9f4b753fc7d2c5f8816fa1afa0a98618
             }
-        }
+        //}
 
 
     }
