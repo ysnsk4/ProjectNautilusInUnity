@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 108255739}
   - component: {fileID: 108255738}
   - component: {fileID: 108255737}
+  - component: {fileID: 108255742}
   m_Layer: 0
   m_Name: Cube
   m_TagString: bullet
@@ -594,6 +595,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 208601536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &108255742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108255736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df35cb05ddaf94e48b3380200c13d915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &127243935
 PrefabInstance:
   m_ObjectHideFlags: 0
